@@ -1,218 +1,225 @@
 import React from 'react';
-import Navbar from './components/Navbar';
 
 function App() {
   const email = "alinaayoub88@gmail.com";
   const linkedinUrl = "https://www.linkedin.com/in/alina-ayub-a32a242ba";
   const location = "Pasrur, Sialkot, Pakistan";
-
-  // Agar local public folder mein image hai to uska path variable bana diya
   const profilePic = "/myPic.jpeg"; 
 
   const projects = [
     {
-      title: "Enterprise Task Management System",
-      desc: "Designed full SRS documentation and developed a collaborative project board featuring state management and interactive metrics dashboard.",
-      tags: ["React", "Context API", "Tailwind CSS", "SRS Management"],
-      link: "#"
+      title: "SelfBuilder Mobile App",
+      tech: "React Native & Node.js",
+      category: "Mobile Application",
+      desc: "A fully functional mobile application built from the ground up. It includes advanced systems for routine habit tracking, daily challenges, and a live leadership board to boost user engagement.",
     },
     {
-      title: "E-Commerce Dashboard Framework",
-      desc: "A premium frontend analytics control panel optimizing dynamic rendering with high-speed layout reflows.",
-      tags: ["React.js", "Vite", "Tailwind v4", "Chart.js"],
-      link: "#"
+      title: "Dream Home Platform",
+      tech: "React.js & Tailwind CSS",
+      category: "TechNexus Internship Project",
+      desc: "Currently engineering an interactive real estate workspace. Designed and developed frontend search filters, property matching algorithms, and side-by-side comparison tables.",
     },
     {
-      title: "AI UI Generation Platform",
-      desc: "Crafted complete functional specifications and implemented a pixel-perfect dark theme client interface integrated with rest endpoints.",
-      tags: ["React", "Modular CSS", "Tailwind", "Git Flow"],
-      link: "#"
+      title: "Hospital Management System",
+      tech: "Java (NetBeans) & MySQL",
+      category: "Desktop Database App",
+      desc: "Designed an automated application to manage patient workflows. Built secure entry modules, database configurations, and clean screens to record, fetch, and track medical files.",
+    },
+    {
+      title: "3D Hostel Entry Simulation",
+      tech: "3D Analogy & Simulation Tool",
+      category: "System Simulation",
+      desc: "Created a structural simulation to analyze traffic flow and security layouts within a campus hostel system, modeling paths using advanced architectural constraints.",
     }
   ];
 
   const skills = [
-    { name: "React.js & Hooks", level: "90%" },
-    { name: "Tailwind CSS (v3/v4)", level: "95%" },
-    { name: "Software Requirement Specification (SRS)", level: "88%" },
-    { name: "JavaScript (ES6+) / Architecture", level: "85%" },
-    { name: "Git Control & Workspace Optimization", level: "80%" }
+    "Software Engineering",
+    "React.js (Frontend)",
+    "React Native (Mobile Development)",
+    "Node.js (Backend Basics)",
+    "Java Programming & NetBeans",
+    "MySQL Database Systems",
+    "Software Requirement Specification (SRS)",
+    "System Documentation"
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased scroll-smooth">
-      {/* Global Navbar */}
-      <Navbar />
+    <div className="min-h-screen bg-gradient-to-tr from-[#0b0c1e] via-[#141233] to-[#25123e] text-slate-100 font-sans overflow-x-hidden selection:bg-pink-500 selection:text-white relative">
       
+      {/* Visual Ambient Glows */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-pink-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      {/* BIGGER & PREMIUM NAVBAR */}
+      <nav className="sticky top-0 z-50 w-full py-6 px-8 md:px-16 flex justify-between items-center backdrop-blur-xl bg-[#0c0d21]/60 border-b border-white/10 shadow-lg shadow-black/20">
+        <div className="text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
+          ALINA.
+        </div>
+        <div className="hidden md:flex gap-12 text-base font-semibold tracking-wide text-purple-200">
+          <a href="#home" className="hover:text-pink-400 transition-colors duration-300 relative group">
+            Home <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all group-hover:w-full"></span>
+          </a>
+          <a href="#about" className="hover:text-pink-400 transition-colors duration-300 relative group">
+            About Me <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all group-hover:w-full"></span>
+          </a>
+          <a href="#projects" className="hover:text-pink-400 transition-colors duration-300 relative group">
+            Projects <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all group-hover:w-full"></span>
+          </a>
+        </div>
+        <a 
+          href={`mailto:${email}`} 
+          className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold px-7 py-3 rounded-full text-sm tracking-wide shadow-lg shadow-pink-500/20 transition-all duration-300 hover:scale-105"
+        >
+          Let's Talk
+        </a>
+      </nav>
+
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
-        {/* Background Glowing Effects */}
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <section id="home" className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-16 md:py-28 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+        
+        {/* Hero Left Content */}
+        <div className="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider shadow-[0_0_15px_rgba(34,211,238,0.15)]">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            Frontend Intern at TechNexus
+          </div>
+          
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none text-white">
+            Software <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 drop-shadow-md">
+              Engineer.
+            </span>
+          </h1>
+          
+          <p className="text-base sm:text-lg text-purple-200/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Hi, my name is Alina Ayub. I am a Software Engineer who specializes in building smooth mobile applications and powerful responsive web systems. I combine logical problem solving with systematic documentation to engineer software that works beautifully.
+          </p>
+          
+          {/* Information Badges */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-mono text-purple-200/60">
+            <span className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">📍 {location}</span>
+            <span className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">📧 {email}</span>
+          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#projects" className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 text-white font-bold shadow-xl shadow-purple-500/20 transition-all duration-300 hover:scale-[1.03] text-center">
+              Explore My Projects
+            </a>
+            <a href={linkedinUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold transition-all text-center">
+              LinkedIn Network
+            </a>
+          </div>
+        </div>
+
+        {/* Hero Right: Neon Frame Image */}
+        <div className="w-full lg:w-2/5 flex justify-center">
+          <div className="relative group w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 rounded-full blur-xl opacity-40 group-hover:opacity-80 transition duration-700 animate-pulse"></div>
             
-            {/* Hero Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <span className="text-emerald-400 font-mono tracking-widest text-sm md:text-base uppercase block font-semibold">
-                {"< Software Engineer & Frontend Developer />"}
-              </span>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                Hi, I am <span className="text-emerald-400">Alina Ayub</span>. Engineering Scalable Web Experiences With React
-              </h1>
-
-              <p className="max-w-2xl mx-auto lg:mx-0 text-slate-400 text-base sm:text-lg leading-relaxed">
-                I combine systematic software engineering core principles, architecture design, and comprehensive SRS frameworks with production-ready React and Tailwind structures.
-              </p>
-
-              {/* Quick Info Badges */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-mono text-slate-400 pt-2">
-                <span className="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2">
-                  📍 {location}
-                </span>
-                <span className="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2">
-                  📧 {email}
-                </span>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                <a href="#projects" className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-950 font-bold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-lg shadow-emerald-500/20 text-center">
-                  Explore Projects
-                </a>
-                <a href={linkedinUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto border border-slate-700 hover:border-emerald-400 hover:bg-slate-900 text-slate-300 hover:text-emerald-400 font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 text-center">
-                  LinkedIn Profile
-                </a>
-              </div>
+            <div className="relative w-full h-full rounded-full border-[6px] border-[#0c0d21] overflow-hidden bg-[#13142e] shadow-2xl">
+              <img 
+                src={profilePic} 
+                alt="Alina Ayub" 
+                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  e.target.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600";
+                }}
+              />
             </div>
-
-            {/* Hero Right: Modern Smooth Rounded Image Container */}
-            <div className="lg:col-span-5 flex justify-center relative">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-                {/* Clean soft background glow behind picture */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-cyan-500 rounded-full blur-xl opacity-20 pointer-events-none"></div>
-                
-                {/* Border Ring container */}
-                <div className="w-full h-full rounded-full p-1.5 bg-gradient-to-tr from-slate-800 via-emerald-500/40 to-slate-800 shadow-2xl">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-slate-900">
-                    <img 
-                      src={profilePic} 
-                      alt="Alina Ayub" 
-                      className="w-full h-full object-cover transition-all duration-500 transform hover:scale-105"
-                      onError={(e) => {
-                        // Agar file missing ho ya naam galat ho to fallback image load ho jaye crash na ho
-                        e.target.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600";
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
-      {/* 2. ABOUT & SKILLS SECTION */}
-      <section id="about" className="py-24 border-t border-slate-900 bg-slate-900/20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      {/* 2. ABOUT & EXPERIENCE */}
+      <section id="about" className="relative z-10 w-full bg-white/[0.01] border-t border-white/5 py-24">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 grid lg:grid-cols-12 gap-16 items-center">
+          
+          {/* About Narrative */}
+          <div className="lg:col-span-7 space-y-6">
+            <span className="text-pink-400 font-mono text-sm uppercase font-bold tracking-widest">Professional Overview</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Engineering Engineering-Grade Core Applications</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full"></div>
             
-            <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 flex items-center gap-3">
-                <span className="text-emerald-400">01.</span> Professional Overview
-              </h2>
-              <p className="text-slate-400 leading-relaxed text-base sm:text-lg">
-                As a software engineer, my core philosophy centers on writing clean, self-documenting code backed by strategic requirements analysis. I excel at parsing complex client specifications into functional SRS structures before executing frontend builds.
-              </p>
-              <p className="text-slate-400 leading-relaxed text-base sm:text-lg">
-                Based out of {location}, I manage localized and remote system analysis workflows with complete dedication to high product quality and modern UI performance.
-              </p>
-            </div>
+            <p className="text-purple-200/80 text-base sm:text-lg leading-relaxed">
+              Currently, I am working as a **Frontend Developer Intern at TechNexus**, where I am building the **Dream Home** platform. My responsibilities focus on writing complex logic patterns for comprehensive property searching, dynamic user profile matching, and clear comparison grids.
+            </p>
+            <p className="text-purple-200/80 text-base sm:text-lg leading-relaxed">
+              I emphasize writing comprehensive **Software Requirement Specifications (SRS)** and absolute design guidelines before any production compilation. From building rich native system interfaces to managing desktop schemas, I value structural performance.
+            </p>
+          </div>
 
-            <div className="space-y-6 bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
-              <h3 className="text-xl font-bold mb-4 text-emerald-400 font-mono">Core Competencies</h3>
-              {skills.map((skill) => (
-                <div key={skill.name}>
-                  <div className="flex justify-between text-sm font-medium mb-1.5">
-                    <span className="text-slate-300">{skill.name}</span>
-                    <span className="text-emerald-400 font-mono">{skill.level}</span>
-                  </div>
-                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div 
-                      className="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full rounded-full"
-                      style={{ width: skill.level }}
-                    ></div>
-                  </div>
+          {/* Skills Checklist Box */}
+          <div className="lg:col-span-5 bg-gradient-to-b from-white/10 to-white/[0.02] border border-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl">
+            <h3 className="text-xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-cyan-300 font-mono tracking-wider">
+              Technical Capabilities
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {skills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className="bg-[#0b0c1e]/60 border border-purple-500/20 text-purple-200/90 px-4 py-3 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-pink-500/40 transition-colors"
+                >
+                  <span className="text-pink-400">✔</span> {skill}
                 </div>
               ))}
             </div>
-
           </div>
+
         </div>
       </section>
 
-      {/* 3. PROJECTS SECTION */}
-      <section id="projects" className="py-24 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 flex items-center gap-3">
-              <span className="text-emerald-400">02.</span> Projects & Engineering Cases
-            </h2>
-            <p className="text-slate-400 mt-2 text-base sm:text-lg">A selection of recent applications built from full specs to deployment.</p>
-          </div>
+      {/* 3. PROJECTS GRID SECTION */}
+      <section id="projects" className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 py-24">
+        <div className="text-center mb-16 space-y-4">
+          <span className="text-cyan-400 font-mono text-sm uppercase font-bold tracking-widest">My Portfolio</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-white">System Applications & Work</h2>
+          <p className="text-purple-300 max-w-lg mx-auto text-sm sm:text-base">A comprehensive record of my live cross-platform systems and engineering designs.</p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div 
-                key={index} 
-                className="group bg-slate-900/60 rounded-xl border border-slate-800/80 p-6 hover:border-emerald-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-emerald-400 mb-4 flex justify-between items-center">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                    </svg>
-                    <a href={project.link} className="text-slate-400 hover:text-cyan-400 transition-colors">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
-
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors text-slate-100">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    {project.desc}
-                  </p>
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((proj, idx) => (
+            <div 
+              key={idx} 
+              className="group relative bg-gradient-to-br from-white/5 to-transparent border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(236,72,153,0.1)] flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20">
+                    {proj.tech}
+                  </span>
+                  <span className="text-[11px] font-mono text-purple-400 font-semibold uppercase">
+                    {proj.category}
+                  </span>
                 </div>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, tIdx) => (
-                    <span 
-                      key={tIdx} 
-                      className="bg-slate-800/60 text-slate-300 text-xs font-mono px-2.5 py-1 rounded border border-slate-700/50"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                  {proj.title}
+                </h3>
+                <p className="text-purple-200/70 text-sm leading-relaxed mb-6">
+                  {proj.desc}
+                </p>
               </div>
-            ))}
-          </div>
+              
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-purple-300 group-hover:text-pink-400 transition-colors pt-4 border-t border-white/5">
+                System Active <span>→</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-8 border-t border-slate-900 bg-slate-950 text-center text-xs sm:text-sm text-slate-400 font-mono space-y-2">
-        <p>© 2026 ALINA AYUB. Developed with Vite + React + Tailwind CSS.</p>
-        <div className="flex justify-center gap-4 text-xs text-slate-500">
-          <a href={`mailto:${email}`} className="hover:text-emerald-400 transition-colors">Email</a>
-          <span>•</span>
-          <a href={linkedinUrl} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">LinkedIn</a>
+      {/* 4. FOOTER */}
+      <footer className="relative z-10 w-full border-t border-white/10 bg-[#070817] py-12 text-center">
+        <p className="text-purple-300/50 text-sm mb-4 font-mono">
+          © 2026 Alina Ayub. Built professionally with React & Tailwind CSS.
+        </p>
+        <div className="flex justify-center items-center gap-6 text-sm font-semibold font-mono">
+          <a href={`mailto:${email}`} className="text-purple-300 hover:text-pink-400 transition-colors">Contact Email</a>
+          <span className="text-slate-800">|</span>
+          <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-purple-300 hover:text-cyan-400 transition-colors">LinkedIn</a>
         </div>
       </footer>
+
     </div>
   );
 }
